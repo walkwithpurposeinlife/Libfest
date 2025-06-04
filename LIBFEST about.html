@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About LibFest</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    /* General Reset & Base Styles */
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #fff;
+      color: #322515;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header */
+    header {
+      background-color: #292475;
+      color: white;
+      padding: 20px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    header nav a {
+      color: white;
+      margin:10px;
+      font-family: 'Open Sans', sans-serif;
+      position: relative;
+    }
+
+    header nav a.active,
+    header nav a:hover {
+      border-bottom: 3px solid #b53f1d;
+      padding-bottom: 5px;
+    }
+
+    /* Hero Content */
+    .about-section {
+      padding: 60px 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .about-section h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 60px;
+      color: #292475;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .about-section p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .about-section p strong {
+      color: #292475;
+    }
+
+    /* Image Grid */
+    .image-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .image-grid img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #322515;
+      color: white;
+      text-align: center;
+      padding: 10px 10px;
+      font-size: 14px;
+    }
+
+    /* ==========================
+       Responsive Styles
+       ========================== */
+
+    /* Tablets */
+    @media (max-width: 991px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .about-section h1 {
+        font-size: 36px;
+      }
+
+      .about-section p {
+        font-size: 16px;
+      }
+
+      .image-grid img {
+        max-width: 45%;
+      }
+    }
+
+    /* Smaller Tablets */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        justify-content: flex-start;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      header nav a {
+        margin: 5px 0;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero p:first-of-type {
+        font-size: 18px;
+      }
+
+      .hero p:nth-of-type(2) {
+        font-size: 16px;
+        padding: 0 10px;
+      }
+
+      .btn-primary {
+        padding: 12px 25px;
+        font-size: 14px;
+      }
+    }
+
+    /* Mobile1 */
+    @media (max-width: 320px) {
+      nav {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .about-section h1 {
+        font-size: 30px;
+      }
+
+      .about-section p {
+        font-size: 15px;
+      }
+
+      .image-grid img {
+        max-width: 100%;
+      }
+    }
+    
+    /*Mobile2 */
+    @media (max-width: 360px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .btn-primary {
+        width: 100%;
+        max-width: 280px;
+      }
+    }
+    
+    /*Mobile3 */
+    @media (max-width: 414px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .btn-primary {
+        width: 100%;
+        max-width: 280px;
+      }
+    }
+    
+    /*Mobile4 */
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .btn-primary {
+        width: 100%;
+        max-width: 280px;
+      }
+    }
+    
+    /*Mobile6 */
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .btn-primary {
+        width: 100%;
+        max-width: 280px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="logo.png" alt="LibFest Logo">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="#events">Events</a>
+      <a href="#sponsors">Sponsorship</a>
+      <a href="#teams">Teams</a>
+      <a href="#performers">Performers</a>
+      <a href="#merch">Buy Merch</a>
+      <a href="#tickets">Buy Tickets</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <h1>About LibFest</h1>
+    <p>
+      Liberia is in West Africa. It is the oldest independent country in Africa.
+      It was settled and founded in 1822 by free slaves from the U.S.A. and Caribbean and became an independent country in 1847.
+    </p>
+    <p>
+      Liberian has a warm, tropical climate with a rainy and a summer season.
+      The rainy season begins in April and lasts through September.
+      The summer “dry” season begins in October and lasts until March.
+    </p>
+    <p><strong>Traveling to Liberia…</strong></p>
+
+    <!-- Image Gallery -->
+    <div class="image-grid">
+      <img src="img1.jpg" alt="Festival Image 1">
+      <img src="img2.jpg" alt="Festival Image 2">
+      <img src="img3.jpg" alt="Festival Image 3">
+      <img src="img4.jpg" alt="Festival Image 4">
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; Copyright Liberia Festival. All Rights Reserved
+  </footer>
+
+</body>
+</html>

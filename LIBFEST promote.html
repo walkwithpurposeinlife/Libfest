@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sponsorship – LibFest</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #ffffff;
+      color: #322515;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #292475;
+      color: white;
+      padding: 20px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 10px;
+      text-decoration: none;
+    }
+
+    nav a.active,
+    nav a:hover {
+      border-bottom: 3px solid #b53f1d;
+      padding-bottom: 5px;
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 50px;
+      text-align: center;
+      color: #292475;
+      margin: 40px 20px 20px;
+    }
+
+    .content {
+      text-align: center;
+      padding: 0 30px 40px;
+      font-size: 18px;
+    }
+
+    .content p {
+      max-width: 800px;
+      margin: 0 auto 20px;
+      line-height: 1.6;
+    }
+
+    .bottom-image {
+      flex: 1;
+    }
+
+    .bottom-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-top: auto;
+    }
+
+    footer {
+      background-color: #322515;
+      color: white;
+      text-align: center;
+      padding: 10px 10px;
+      font-size: 14px;
+    }
+
+/* ==========================
+       Responsive Styles
+   ========================== */
+
+/* Tablets */
+@media (max-width: 991px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .merch-section h1 {
+    font-size: 36px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+
+  .image-box img {
+    max-width: 45%;
+  }
+}
+
+/* Smaller Tablets */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  header nav a {
+    margin: 5px 0;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero p:first-of-type {
+    font-size: 18px;
+  }
+
+  .hero p:nth-of-type(2) {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .btn-primary {
+    padding: 12px 25px;
+    font-size: 14px;
+  }
+
+  .merch-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .text {
+    text-align: center;
+  }
+}
+
+/* Mobile 6 */
+@media (max-width: 640px) {
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .btn-primary {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* Mobile 4 */
+@media (max-width: 480px) {
+  .btn-primary {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* Mobile 3 */
+@media (max-width: 414px) {
+  .btn-primary {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* Mobile 2 */
+@media (max-width: 360px) {
+  .btn-primary {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* Mobile 1 */
+@media (max-width: 320px) {
+  nav {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .merch-section h1 {
+    font-size: 30px;
+  }
+
+  .text {
+    font-size: 15px;
+  }
+
+  .image-box img {
+    max-width: 100%;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="logo.png" alt="LibFest Logo">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="events.html">Events</a>
+      <a href="sponsorship.html" class="active">Sponsorship</a>
+      <a href="teams.html">Teams</a>
+      <a href="performers.html">Performers</a>
+      <a href="merch.html">Buy Merch</a>
+      <a href="buy-tickets.html">Buy Tickets</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <h1>Promote Your Business With LibFest</h1>
+
+  <div class="content">
+    <p>LibFest is offering the opportunity for Liberia-based and Diaspora-based companies to advertise their products and service with LibFest and reach customers in Liberia and the diaspora.</p>
+    <p>We offer a variety of ways to advertise with us. If you’re interested advertising and/or sponsoring LibFest, please contact <a href="mailto:sponsor@liberianfestival.org">sponsor@liberianfestival.org</a> or call 555.555.5555 to discuss.</p>
+    <p>You can also complete the Contact Us form and we’ll reach out to you.</p>
+  </div>
+
+  <!-- Image Touching Footer -->
+  <div class="bottom-image">
+    <img src="libfest-sponsors.jpg" alt="LibFest Sponsorship Group Photo">
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; Copyright Liberia Festival. All Rights Reserved
+  </footer>
+
+</body>
+</html>

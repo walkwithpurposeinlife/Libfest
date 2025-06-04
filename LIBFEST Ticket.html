@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buy Tickets - LibFest</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #ffffff;
+      color: #322515;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      background-color: #292475;
+      color: white;
+      padding: 20px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 10px;
+    }
+
+    nav a.active,
+    nav a:hover {
+      border-bottom: 3px solid #b53f1d;
+      padding-bottom: 5px;
+    }
+
+    h1.ticket-heading {
+      font-family: 'DM Serif Display', serif;
+      font-size: 50px;
+      text-align: center;
+      color: #292475;
+      margin: 40px 20px 30px;
+    }
+
+    .content-wrapper {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      min-height: 500px;
+    }
+
+    .left-column {
+      flex: 1 1 50%;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .left-column p {
+      font-size: 18px;
+      margin-bottom: 15px;
+    }
+
+    .left-column ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 20px;
+    }
+
+    .left-column ul li {
+      margin-bottom: 10px;
+    }
+
+    .cta-button {
+      background-color: #b53f1d;
+      color: white;
+      padding: 14px 40px;
+      font-size: 16px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: normal;
+      display: inline-block;
+      width: fit-content;
+      margin-top: 10px;
+    }
+
+    .right-column {
+      flex: 1 1 50%;
+      overflow: hidden;
+    }
+
+    .right-column img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    footer {
+      background-color: #322515;
+      color: white;
+      text-align: center;
+      padding: 10px 10px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 991px) {
+      .content-wrapper {
+        flex-direction: column;
+      }
+
+      .left-column,
+      .right-column {
+        flex: 1 1 100%;
+      }
+
+      .right-column {
+        height: 300px;
+      }
+
+      .ticket-heading {
+        font-size: 36px;
+      }
+
+      .cta-button {
+        align-self: center;
+      }
+    }
+
+/* ==========================
+       Responsive Styles
+   ========================== */
+
+/* Tablets */
+@media (max-width: 991px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .merch-section h1 {
+    font-size: 36px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+
+  .image-box img {
+    max-width: 45%;
+  }
+}
+
+/* Smaller Tablets */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  header nav a {
+    margin: 5px 0;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero p:first-of-type {
+    font-size: 18px;
+  }
+
+  .hero p:nth-of-type(2) {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .btn-primary {
+    padding: 12px 25px;
+    font-size: 14px;
+  }
+
+  .merch-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .text {
+    text-align: center;
+  }
+}
+
+/* Mobile 6 */
+@media (max-width: 640px) {
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .btn-primary {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* Mobile 4 */
+@media (max-width: 480px) {
+  .btn-primary {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* Mobile 3 */
+@media (max-width: 414px) {
+  .btn-primary {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* Mobile 2 */
+@media (max-width: 360px) {
+  .btn-primary {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* Mobile 1 */
+@media (max-width: 320px) {
+  nav {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .merch-section h1 {
+    font-size: 30px;
+  }
+
+  .text {
+    font-size: 15px;
+  }
+
+  .image-box img {
+    max-width: 100%;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="logo.png" alt="LibFest Logo">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="events.html">Events</a>
+      <a href="sponsorship.html">Sponsorship</a>
+      <a href="teams.html">Teams</a>
+      <a href="performers.html">Performers</a>
+      <a href="merch.html">Buy Merch</a>
+      <a href="buy-tickets.html" class="active">Buy Tickets</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Page Content -->
+  <h1 class="ticket-heading">Join the Celebration – Get Your Tickets</h1>
+
+  <div class="content-wrapper">
+    <div class="left-column">
+      <p>LIBFEST2025 is more than just a festival—it’s a movement. Don’t miss this historic gathering of culture, pride, and unity.</p>
+      <ul>
+        <li>🎟️ Early bird, group, and VIP tickets now available.</li>
+        <li>📍 Location: Monrovia, Liberia</li>
+        <li>📅 Dates: [Insert actual festival dates here]</li>
+      </ul>
+      <p>Special rates for Liberians in the diaspora traveling home.</p>
+      <p>Tickets are limited—book early and be part of history!</p>
+      <a class="cta-button" href="#">Book Tickets – Celebrate With Us</a>
+    </div>
+    <div class="right-column">
+      <img src="ticket-group-photo.jpg" alt="People celebrating at LIBFEST">
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; Copyright Liberia Festival. All Rights Reserved
+  </footer>
+
+</body>
+</html>

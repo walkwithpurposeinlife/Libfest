@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Performers - LibFest</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #fff;
+      color: #322515;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header */
+    header {
+      background-color: #292475;
+      color: white;
+      padding: 20px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 10px;
+      font-family: 'Open Sans', sans-serif;
+      position: relative;
+    }
+
+    nav a.active,
+    nav a:hover {
+      border-bottom: 3px solid #b53f1d;
+      padding-bottom: 5px;
+    }
+
+    /* Performers Section */
+    .performers-section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .performers-section h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 42px;
+      color: #292475;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .performers-section img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    .performers-section p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .highlight {
+      margin-top: 10px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .highlight::before {
+      content: "🎤 ";
+    }
+
+    .highlight.music::before {
+      content: "🎶 ";
+    }
+
+    /* Footer */
+    footer {
+      background-color: #322515;
+      color: white;
+      text-align: center;
+      padding: 10px 10px;
+      font-size: 14px;
+    }
+/* ==========================
+       Responsive Styles
+       ========================== */
+
+    /* Tablets */
+    @media (max-width: 991px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .about-section h1 {
+        font-size: 36px;
+      }
+
+      .about-section p {
+        font-size: 16px;
+      }
+
+      .image-grid img {
+        max-width: 45%;
+      }
+    }
+
+    /* Smaller Tablets */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        justify-content: flex-start;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      header nav a {
+        margin: 5px 0;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero p:first-of-type {
+        font-size: 18px;
+      }
+
+      .hero p:nth-of-type(2) {
+        font-size: 16px;
+        padding: 0 10px;
+      }
+
+      .btn-primary {
+        padding: 12px 25px;
+        font-size: 14px;
+      }
+    }
+
+    /* Mobile1 */
+    @media (max-width: 320px) {
+      nav {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .about-section h1 {
+        font-size: 30px;
+      }
+
+      .about-section p {
+        font-size: 15px;
+      }
+
+      .image-grid img {
+        max-width: 100%;
+      }
+    }
+    
+    /*Mobile2 */
+    @media (max-width: 360px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .btn-primary {
+        width: 100%;
+        max-width: 280px;
+      }
+    }
+    
+    /*Mobile3 */
+    @media (max-width: 414px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .btn-primary {
+        width: 100%;
+        max-width: 280px;
+      }
+    }
+    
+    /*Mobile4 */
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .btn-primary {
+        width: 100%;
+        max-width: 280px;
+      }
+    }
+    
+    /*Mobile6 */
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .btn-primary {
+        width: 100%;
+        max-width: 280px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="logo.png" alt="LibFest Logo">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="events.html">Events</a>
+      <a href="sponsorship.html">Sponsorship</a>
+      <a href="teams.html">Teams</a>
+      <a href="performers.html" class="active">Performers</a>
+      <a href="#merch">Buy Merch</a>
+      <a href="#tickets">Buy Tickets</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Performers Section -->
+  <section class="performers-section">
+    <h1>Celebrating Liberian Talent</h1>
+    <img src="performer-photo.jpg" alt="Live Performance Crowd">
+
+    <p>
+      LIBFEST2025 will showcase an exciting lineup of Liberian musicians, dancers, poets, comedians, and international guest artists.
+      Our performers represent the heartbeat of Liberia—bold, proud, and full of rhythm.
+    </p>
+    <p>
+      Whether you're into traditional drumming, Afrobeat, gospel, hip-hop, or spoken word, there’s something for everyone.
+    </p>
+    <p class="highlight">Stay tuned for the official performer lineup and schedule.</p>
+    <p class="highlight music">Want to perform? Applications are now open for local and diaspora artists!</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; Copyright Liberia Festival. All Rights Reserved
+  </footer>
+
+</body>
+</html>

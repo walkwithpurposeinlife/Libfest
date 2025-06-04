@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meet the Team - LibFest</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #fff;
+      color: #322515;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header */
+    header {
+      background-color: #292475;
+      color: white;
+      padding: 20px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 10px;
+      font-family: 'Open Sans', sans-serif;
+      position: relative;
+    }
+
+    nav a.active,
+    nav a:hover {
+      border-bottom: 3px solid #b53f1d;
+      padding-bottom: 5px;
+    }
+
+    /* Teams Section */
+    .teams-section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .teams-section h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 42px;
+      color: #292475;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .teams-section .intro {
+      text-align: left;
+      max-width: 1000px 1000px;
+      margin: 0 auto 20px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .teams-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .teams-text {
+      flex: 1 1 400px;
+      max-width: 600px;
+    }
+
+    .teams-text p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .teams-text .coming-soon {
+      color: #b53f1d;
+      font-style: italic;
+      font-weight: bold;
+    }
+
+    .teams-photo {
+      flex: 1 1 300px;
+      max-width: 500px;
+    }
+
+    .teams-photo img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #322515;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 14px;
+    }
+
+    /* ==========================
+       Responsive Styles
+       ========================== */
+
+    /* Tablets */
+    @media (max-width: 991px) {
+      header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .about-section h1 {
+        font-size: 36px;
+      }
+
+      .about-section p {
+        font-size: 16px;
+      }
+
+      .image-grid img {
+        max-width: 45%;
+      }
+    }
+
+    /* Smaller Tablets */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        justify-content: flex-start;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      header nav a {
+        margin: 5px 0;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero p:first-of-type {
+        font-size: 18px;
+      }
+
+      .hero p:nth-of-type(2) {
+        font-size: 16px;
+        padding: 0 10px;
+      }
+
+      .btn-primary {
+        padding: 12px 25px;
+        font-size: 14px;
+      }
+    }
+
+    /* Mobile1 */
+    @media (max-width: 320px) {
+      nav {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .about-section h1 {
+        font-size: 30px;
+      }
+
+      .about-section p {
+        font-size: 15px;
+      }
+
+      .image-grid img {
+        max-width: 100%;
+      }
+    }
+    
+    /*Mobile2 */
+    @media (max-width: 360px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .btn-primary {
+        width: 100%;
+        max-width: 280px;
+      }
+    }
+    
+    /*Mobile3 */
+    @media (max-width: 414px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .btn-primary {
+        width: 100%;
+        max-width: 280px;
+      }
+    }
+    
+    /*Mobile4 */
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .btn-primary {
+        width: 100%;
+        max-width: 280px;
+      }
+    }
+    
+    /*Mobile6 */
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .btn-primary {
+        width: 100%;
+        max-width: 280px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="logo.png" alt="LibFest Logo">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="events.html">Events</a>
+      <a href="sponsorship.html">Sponsorship</a>
+      <a href="teams.html" class="active">Teams</a>
+      <a href="#performers">Performers</a>
+      <a href="#merch">Buy Merch</a>
+      <a href="#tickets">Buy Tickets</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Teams Section -->
+  <section class="teams-section">
+    <h1>Meet the People Behind LIBFEST2025</h1>
+    <p class="intro">LIBFEST2025 is made possible by a passionate and diverse team of organizers, creatives, volunteers, and community leaders—both in Liberia and across the diaspora.</p>
+
+    <div class="teams-content">
+      <div class="teams-text">
+        <p>Each member brings a unique perspective to ensure this festival is a true celebration of Liberia’s past, present, and future.</p>
+        <p>From logistics and event planning to media outreach and cultural programming, meet the dedicated teams working to make Liberia’s 178th Independence celebration unforgettable.</p>
+        <p class="coming-soon">Coming soon: Full team profiles and volunteer sign-up opportunities.</p>
+      </div>
+      <div class="teams-photo">
+        <img src="team-photo.jpg" alt="LibFest Team Photo">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; Copyright Liberia Festival. All Rights Reserved
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buy Merch - LibFest</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #fffff;
+      color: #322515;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      background-color: #292475;
+      color: white;
+      padding: 20px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 10px;
+    }
+
+    nav a.active,
+    nav a:hover {
+      border-bottom: 3px solid #b53f1d;
+      padding-bottom: 5px;
+    }
+
+    .merch-section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    .merch-section h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 50px;
+      color: #292475;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .merch-content {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+
+    .merch-text {
+      flex: 1 1 45%;
+      font-size: 18px;
+      text-align: left;
+    }
+
+    .merch-text ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .merch-text ul li {
+      margin-bottom: 10px;
+    }
+
+    .cta-button {
+      background-color: #b53f1d;
+      color: white;
+      padding: 14px 40px;
+      font-size: 16px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: normal;
+      margin-top: 20px;
+      display: inline-block;
+    }
+
+    .image-grid {
+      flex: 1 1 45%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .image-grid img {
+      width: 100%;
+      border-radius: 12px;
+      object-fit: cover;
+    }
+
+    .image-grid img:first-child {
+      grid-column: span 2;
+    }
+
+    footer {
+      background-color: #322515;
+      color: white;
+      text-align: center;
+      padding: 10px 10px;
+      font-size: 14px;
+      margin-top: 50px;
+    }
+
+    /* ==========================
+       Responsive Styles
+   ========================== */
+
+/* Tablets */
+@media (max-width: 991px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .merch-section h1 {
+    font-size: 36px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+
+  .image-box img {
+    max-width: 45%;
+  }
+}
+
+/* Smaller Tablets */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  header nav a {
+    margin: 5px 0;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero p:first-of-type {
+    font-size: 18px;
+  }
+
+  .hero p:nth-of-type(2) {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .btn-primary {
+    padding: 12px 25px;
+    font-size: 14px;
+  }
+
+  .merch-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .text {
+    text-align: center;
+  }
+}
+
+/* Mobile 6 */
+@media (max-width: 640px) {
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .btn-primary {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* Mobile 4 */
+@media (max-width: 480px) {
+  .btn-primary {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* Mobile 3 */
+@media (max-width: 414px) {
+  .btn-primary {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* Mobile 2 */
+@media (max-width: 360px) {
+  .btn-primary {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* Mobile 1 */
+@media (max-width: 320px) {
+  nav {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .merch-section h1 {
+    font-size: 30px;
+  }
+
+  .text {
+    font-size: 15px;
+  }
+
+  .image-box img {
+    max-width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="logo.png" alt="LibFest Logo">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="events.html">Events</a>
+      <a href="sponsorship.html">Sponsorship</a>
+      <a href="teams.html">Teams</a>
+      <a href="performers.html">Performers</a>
+      <a href="merch.html" class="active">Buy Merch</a>
+      <a href="#tickets">Buy Tickets</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Merch Section -->
+  <section class="merch-section">
+    <h1>Official LIBFEST2025 Merchandise</h1>
+    <div class="merch-content">
+      <div class="merch-text">
+        <p>Celebrate Liberia’s 178th birthday in style! Shop our exclusive line of LIBFEST2025 apparel, accessories, and souvenirs designed by local Liberian artists and creatives.</p>
+        <ul>
+          <li>👕 T-shirts, hats, and hoodies</li>
+          <li>🖼️ Art prints and cultural souvenirs</li>
+          <li>👜 Eco-friendly bags and more!</li>
+        </ul>
+        <p>Every purchase supports Liberian artists and helps fund the festival.</p>
+        <ul>
+          <li>💳 Secure online payment and international shipping available.</li>
+        </ul>
+        <a class="cta-button" href="#">Shop Now – Wear Your Pride</a>
+      </div>
+
+      <div class="image-grid">
+        <img src="merch1.jpg" alt="Main merch">
+        <img src="merch2.jpg" alt="Merch image 2">
+        <img src="merch3.jpg" alt="Merch image 3">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; Copyright Liberia Festival. All Rights Reserved
+  </footer>
+
+</body>
+</html>

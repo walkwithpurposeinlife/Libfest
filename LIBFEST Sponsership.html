@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sponsorship Packages - LibFest</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Open Sans', sans-serif;
+      background-color: #fff;
+      color: #322515;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header */
+    header {
+      background-color: #292475;
+      color: white;
+      padding: 20px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    header nav a {
+      color: white;
+      margin: 10px;
+      font-family: 'Open Sans', sans-serif;
+      position: relative;
+    }
+
+    header nav a.active,
+    header nav a:hover {
+      border-bottom: 3px solid #b53f1d;
+      padding-bottom: 5px;
+    }
+
+    /* Sponsorship Section */
+    .sponsorship-section {
+      background: url('sponsorship-bg.jpg') center/cover no-repeat;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .sponsorship-section h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 28px;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .sponsorship-section h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 48px;
+      color: white;
+      margin-bottom: 60px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      padding: 30px 20px;
+      border: 3px solid transparent;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card.red { border-color: #b53f1d; }         /* Radio Announcement */
+    .card.green { border-color: #587a33; }       /* Online Sponsorship */
+    .card.blue { border-color: #535a9f; }         /* Silver Sponsorship */
+    .card.orange { border-color: #ffb400; }       /* Gold Sponsorship */
+    .card.turquoise { border-color: #5ce1e6; }    /* Platinum Sponsorship */
+
+    .card h3 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 20px;
+      color: #292475;
+      margin-bottom: 10px;
+    }
+
+    .card h2 {
+      font-size: 24px;
+      color: #b53f1d;
+      margin: 10px 0;
+    }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    .card ul li {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .card ul li::before {
+      content: '✔';
+      color: green;
+      margin-right: 10px;
+    }
+
+    .card ul li.unavailable::before {
+      content: '✖';
+      color: red;
+    }
+
+    .card button {
+      background-color: #b53f1d;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      font-weight: bold;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .card button:hover {
+      background-color: #922f17;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #322515;
+      color: white;
+      text-align: center;
+      padding: 10px 10px;
+      font-size: 14px;
+    }
+
+    .footnote {
+      font-size: 12px;
+      margin-top: 20px;
+      color: #ffd700;
+      text-align: center;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (max-width: 768px) {
+      .sponsorship-section h1 {
+        font-size: 32px;
+      }
+
+      .sponsorship-section h2 {
+        font-size: 20px;
+      }
+
+      .card h3 {
+        font-size: 18px;
+      }
+
+      .card h2 {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <img src="logo.png" alt="LibFest Logo">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="events.html">Events</a>
+      <a href="sponsorship.html" class="active">Sponsorship</a>
+      <a href="#teams">Teams</a>
+      <a href="#performers">Performers</a>
+      <a href="#merch">Buy Merch</a>
+      <a href="#tickets">Buy Tickets</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Sponsorship Section -->
+  <section class="sponsorship-section">
+    <h2>LIBFEST Basketball Tournament 2025</h2>
+    <h1>Sponsor Advertising Packages</h1>
+
+    <div class="cards">
+
+      <!-- Radio Announcement Sponsorship -->
+      <div class="card red">
+        <h3>Radio Announcement Sponsorship</h3>
+        <h2>$100 USD</h2>
+        <ul>
+          <li>Radio Sponsorship Announcement</li>
+          <li class="unavailable">Facebook/Instagram/Website Ad Display</li>
+          <li class="unavailable">Logo on Flyer</li>
+          <li class="unavailable">Banner ad display at all events</li>
+          <li class="unavailable">Sponsorship announcement to audience</li>
+          <li class="unavailable">Company Name on Trophy</li>
+        </ul>
+        <button>Get Started</button>
+      </div>
+
+      <!-- Online Sponsorship -->
+      <div class="card green">
+        <h3>Online Sponsorship</h3>
+        <h2>$200 USD</h2>
+        <ul>
+          <li class="unavailable">Radio Sponsorship Announcement</li>
+          <li>Facebook/Instagram/Website Ad Display</li>
+          <li class="unavailable">Logo on Flyer</li>
+          <li class="unavailable">Banner ad display at all events</li>
+          <li class="unavailable">Sponsorship announcement to audience</li>
+          <li class="unavailable">Company Name on Trophy</li>
+        </ul>
+        <button>Get Started</button>
+      </div>
+
+      <!-- Silver Sponsorship -->
+      <div class="card blue">
+        <h3>Silver Sponsorship</h3>
+        <h2>$1000 USD</h2>
+        <ul>
+          <li>Radio Sponsorship Announcement</li>
+          <li>Facebook/Instagram/Website Ad Display</li>
+          <li>Logo on Flyer</li>
+          <li class="unavailable">Banner ad display at all events</li>
+          <li class="unavailable">Sponsorship announcement to audience</li>
+          <li class="unavailable">Company Name on Trophy</li>
+        </ul>
+        <button>Get Started</button>
+      </div>
+
+      <!-- Gold Sponsorship -->
+      <div class="card orange">
+        <h3>Gold Sponsorship</h3>
+        <h2>$2500 USD</h2>
+        <ul>
+          <li>Radio Sponsorship Announcement</li>
+          <li>Facebook/Instagram/Website Ad Display*</li>
+          <li>Logo on Flyer***</li>
+          <li>Banner ad display at all events*</li>
+          <li class="unavailable">Sponsorship announcement to audience</li>
+          <li class="unavailable">Company Name on Trophy</li>
+        </ul>
+        <button>Get Started</button>
+      </div>
+
+      <!-- Platinum Sponsorship -->
+      <div class="card turquoise">
+        <h3>Platinum Sponsorship</h3>
+        <h2>$5000 USD</h2>
+        <ul>
+          <li>Radio Sponsorship Announcement</li>
+          <li>Facebook/Instagram/Website Ad Display</li>
+          <li>Logo on Flyer</li>
+          <li>Banner ad display at tournament</li>
+          <li>Sponsorship announcement to audience</li>
+          <li>Company Name on Trophy</li>
+        </ul>
+        <button>Get Started</button>
+      </div>
+
+    </div>
+
+    <div class="footnote">
+      *sponsor must provide banner ad (limit in size) | **sponsor must provide social media ad graphic | ***sponsor must provide logo for flyer
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; Copyright Liberia Festival. All Rights Reserved
+  </footer>
+
+</body>
+</html>
