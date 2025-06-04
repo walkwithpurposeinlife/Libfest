@@ -172,10 +172,14 @@
       }
 
       nav {
+        display: none; 
         justify-content: flex-start;
         flex-direction: column;
         width: 100%;
       }
+      nav.show {
+    display: flex; 
+  }
 
       header nav a {
         margin: 5px 0;
@@ -290,7 +294,7 @@
       <span></span>
     </button>
     
-    <nav>
+    <nav id="mainNav">
       <a href="Libfest Home.html">Home</a>
       <a href="LIBFEST about.html"class="active">About</a>
       <a href="LLBFEST Events.html">Events</a>
