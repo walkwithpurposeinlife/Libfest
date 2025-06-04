@@ -35,6 +35,7 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
+      position: relative;
     }
 
     header img {
@@ -64,6 +65,67 @@
       padding-bottom: 5px;
     }
 
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 1001;
+    }
+
+    .hamburger span {
+      height: 4px;
+      background: white;
+      border-radius: 2px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: rotate(45deg) translateY(10px);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: rotate(-45deg) translateY(-10px);
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: row;
+        align-items: center;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: var(--blue);
+        padding: 10px 0;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      header nav a {
+        margin: 10px 0;
+        font-size: 18px;
+      }
+    }
+
     .hero {
       background-image: url('Herobgimage.png'); 
       background-size: cover;
@@ -74,18 +136,16 @@
       position: relative;
     }
 
-    
-
     .hero-content {
-    position: relative;
-    z-index: 1;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.65);
-    padding-bottom: 40px;
-    border-radius: 15px;
-}
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.65);
+      padding-bottom: 40px;
+      border-radius: 15px;
+    }
 
     .hero h1 {
       font-family: 'DM Serif Display', serif;
@@ -129,141 +189,20 @@
       background-color: var(--brown);
       color: white;
     }
-
-    /* ==========================
-       Responsive Styles
-       ========================== */
-
-    /* Tablets */
-    @media (max-width: 991px) {
-      header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
-      .about-section h1 {
-        font-size: 36px;
-      }
-
-      .about-section p {
-        font-size: 16px;
-      }
-
-      .image-grid img {
-        max-width: 45%;
-      }
-    }
-
-    /* Smaller Tablets */
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav {
-        justify-content: flex-start;
-        flex-direction: column;
-        width: 100%;
-      }
-
-      header nav a {
-        margin: 5px 0;
-      }
-
-      .hero h1 {
-        font-size: 42px;
-      }
-
-      .hero p:first-of-type {
-        font-size: 18px;
-      }
-
-      .hero p:nth-of-type(2) {
-        font-size: 16px;
-        padding: 0 10px;
-      }
-
-      .btn-primary {
-        padding: 12px 25px;
-        font-size: 14px;
-      }
-    }
-
-    /* Mobile1 */
-    @media (max-width: 320px) {
-      nav {
-        flex-direction: column;
-        gap: 8px;
-      }
-
-      .about-section h1 {
-        font-size: 30px;
-      }
-
-      .about-section p {
-        font-size: 15px;
-      }
-
-      .image-grid img {
-        max-width: 100%;
-      }
-    }
-    
-    /*Mobile2 */
-    @media (max-width: 360px) {
-      .hero h1 {
-        font-size: 36px;
-      }
-
-      .btn-primary {
-        width: 100%;
-        max-width: 280px;
-      }
-    }
-    
-    /*Mobile3 */
-    @media (max-width: 414px) {
-      .hero h1 {
-        font-size: 36px;
-      }
-
-      .btn-primary {
-        width: 100%;
-        max-width: 280px;
-      }
-    }
-    
-    /*Mobile4 */
-    @media (max-width: 480px) {
-      .hero h1 {
-        font-size: 36px;
-      }
-
-      .btn-primary {
-        width: 100%;
-        max-width: 280px;
-      }
-    }
-    
-    /*Mobile6 */
-    @media (max-width: 640px) {
-      .hero h1 {
-        font-size: 36px;
-      }
-
-      .btn-primary {
-        width: 100%;
-        max-width: 280px;
-      }
-    }
   </style>
 </head>
 <body>
   <header>
     <img src="logo.png" alt="LibFest Logo">
-    <nav>
+
+    <!-- Hamburger button for mobile -->
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id="mainNav">
       <a href="Libfest Home.html" class="active">Home</a>
       <a href="LIBFEST about.html">About</a>
       <a href="LLBFEST Events.html">Events</a>
@@ -286,8 +225,7 @@
         The aim of the festival is to not only celebrate the struggles and progress Liberia has made as a nation,
         but to also promote tourism among the Liberian diaspora and boost the local economy.
         The festival is targeted at local Liberians and Liberians in the diaspora.
-        <br>
-        <br>
+        <br><br>
         The 5-day festival will be held in Monrovia and is planned to run from December 17 to December 22, 2025.
         It will include a variety of events including sporting events, musical events, excursion trips to tourist
         destinations in Monrovia and around the country, and an investment workshop.
@@ -300,5 +238,14 @@
   <footer>
     &copy; Copyright Liberia Festival. All Rights Reserved
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('mainNav');
+      const burger = document.getElementById('hamburger');
+      nav.classList.toggle('show');
+      burger.classList.toggle('open');
+    }
+  </script>
 </body>
-</html>	
+</html>
