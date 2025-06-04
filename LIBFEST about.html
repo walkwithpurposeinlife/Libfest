@@ -42,19 +42,16 @@
       gap: 10px;
     }
 
-   header nav a {
+    header nav a {
       color: white;
-      margin: 10px;
-      text-decoration: none;
-      font-weight: normal;
+      margin:10px;
       font-family: 'Open Sans', sans-serif;
       position: relative;
-      transition: border-bottom 0.3s ease;
     }
 
     header nav a.active,
     header nav a:hover {
-      border-bottom: 3px solid var(--red);
+      border-bottom: 3px solid #b53f1d;
       padding-bottom: 5px;
     }
 
@@ -100,38 +97,7 @@
       border-radius: 10px;
       object-fit: cover;
     }
-.hamburger {
-      display: none;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 30px;
-      height: 24px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      z-index: 1001;
-    }
 
-    .hamburger span {
-      height: 4px;
-      background: white;
-      border-radius: 2px;
-      transition: all 0.3s ease-in-out;
-    }
-
-    .hamburger.open span:nth-child(1) {
-      transform: rotate(45deg) translateY(10px);
-    }
-
-    .hamburger.open span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger.open span:nth-child(3) {
-      transform: rotate(-45deg) translateY(-10px);
-    }
-    
     /* Footer */
     footer {
       background-color: #322515;
@@ -164,7 +130,6 @@
       .image-grid img {
         max-width: 45%;
       }
-      
     }
 
     /* Smaller Tablets */
@@ -175,14 +140,10 @@
       }
 
       nav {
-        display: none; 
         justify-content: flex-start;
         flex-direction: column;
         width: 100%;
       }
-      nav.show {
-    display: flex; 
-  }
 
       header nav a {
         margin: 5px 0;
@@ -205,10 +166,6 @@
         padding: 12px 25px;
         font-size: 14px;
       }
-         .hamburger {
-        display: flex;
-      }
-
     }
 
     /* Mobile1 */
@@ -229,7 +186,6 @@
       .image-grid img {
         max-width: 100%;
       }
-
     }
     
     /*Mobile2 */
@@ -254,7 +210,6 @@
         width: 100%;
         max-width: 280px;
       }
-        
     }
     
     /*Mobile4 */
@@ -279,7 +234,6 @@
         width: 100%;
         max-width: 280px;
       }
-    
     }
   </style>
 </head>
@@ -290,14 +244,7 @@
 <body>
   <header>
     <img src="logo.png" alt="LibFest Logo">
-<!-- Hamburger button for mobile -->
-    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    
-    <nav id="mainNav">
+    <nav>
       <a href="Libfest Home.html">Home</a>
       <a href="LIBFEST about.html"class="active">About</a>
       <a href="LLBFEST Events.html">Events</a>
@@ -338,13 +285,6 @@
   <footer>
     &copy; Copyright Liberia Festival. All Rights Reserved
   </footer>
- <script>
-    function toggleMenu() {
-      const nav = document.getElementById('mainNav');
-      const burger = document.getElementById('hamburger');
-      nav.classList.toggle('show');
-      burger.classList.toggle('open');
-    }
-  </script>
+
 </body>
 </html>
