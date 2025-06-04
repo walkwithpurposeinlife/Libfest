@@ -97,7 +97,38 @@
       border-radius: 10px;
       object-fit: cover;
     }
+.hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 1001;
+    }
 
+    .hamburger span {
+      height: 4px;
+      background: white;
+      border-radius: 2px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: rotate(45deg) translateY(10px);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: rotate(-45deg) translateY(-10px);
+    }
+    
     /* Footer */
     footer {
       background-color: #322515;
@@ -130,37 +161,7 @@
       .image-grid img {
         max-width: 45%;
       }
-      .hamburger {
-      display: none;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 30px;
-      height: 24px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0;
-      z-index: 1001;
-    }
-
-    .hamburger span {
-      height: 4px;
-      background: white;
-      border-radius: 2px;
-      transition: all 0.3s ease-in-out;
-    }
-
-    .hamburger.open span:nth-child(1) {
-      transform: rotate(45deg) translateY(10px);
-    }
-
-    .hamburger.open span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger.open span:nth-child(3) {
-      transform: rotate(-45deg) translateY(-10px);
-    }
+      
     }
 
     /* Smaller Tablets */
