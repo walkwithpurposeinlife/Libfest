@@ -42,16 +42,19 @@
       gap: 10px;
     }
 
-    header nav a {
+   header nav a {
       color: white;
-      margin:10px;
+      margin: 10px;
+      text-decoration: none;
+      font-weight: normal;
       font-family: 'Open Sans', sans-serif;
       position: relative;
+      transition: border-bottom 0.3s ease;
     }
 
     header nav a.active,
     header nav a:hover {
-      border-bottom: 3px solid #b53f1d;
+      border-bottom: 3px solid var(--red);
       padding-bottom: 5px;
     }
 
