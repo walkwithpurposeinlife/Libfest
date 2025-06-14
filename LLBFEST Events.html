@@ -7,7 +7,6 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <style>
-    /* General Reset & Base Styles */
     body {
       margin: 0;
       font-family: 'Open Sans', sans-serif;
@@ -20,42 +19,115 @@
       color: inherit;
     }
 
-    /* Header */
-    header {
+    .top-bar {
+      background-color: #b53f1d;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 5px 20px;
+    }
+
+    .social-icons a {
+      margin-left: 10px;
+      display: inline-block;
+    }
+
+    .social-icons img {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+    }
+
+    .site-header {
       background-color: #292475;
       color: white;
       padding: 20px 30px;
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
+      position: relative;
     }
 
-    header img {
+    .logo {
       height: 120px;
     }
 
-    nav {
+    .main-nav {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 10px;
     }
 
-    header nav a {
+    .main-nav a {
       color: white;
       margin: 10px;
+      text-decoration: none;
       font-family: 'Open Sans', sans-serif;
-      position: relative;
+      transition: border-bottom 0.3s ease;
     }
 
-    header nav a.active,
-    header nav a:hover {
+    .main-nav a.active,
+    .main-nav a:hover {
       border-bottom: 3px solid #b53f1d;
       padding-bottom: 5px;
     }
 
-    /* Events Section */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 1001;
+    }
+
+    .hamburger span {
+      height: 4px;
+      background: white;
+      border-radius: 2px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: rotate(45deg) translateY(10px);
+    }
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+    .hamburger.open span:nth-child(3) {
+      transform: rotate(-45deg) translateY(-10px);
+    }
+
+    @media (max-width: 768px) {
+      .main-nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: #292475;
+        padding: 10px 0;
+      }
+
+      .main-nav.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .main-nav a {
+        margin: 10px 0;
+        font-size: 18px;
+      }
+    }
+
     .about-section {
       padding: 60px 40px;
       max-width: 1200px;
@@ -103,7 +175,6 @@
       margin: 0;
     }
 
-    /* Footer */
     footer {
       background-color: #322515;
       color: white;
@@ -112,189 +183,100 @@
       font-size: 14px;
     }
 
-    /* ==========================
-       Responsive Styles
-       ========================== */
-
-    /* Tablets */
     @media (max-width: 991px) {
-      header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-
       .about-section h1 {
         font-size: 36px;
       }
-
-      .about-section p {
-        font-size: 16px;
-      }
-
-      .image-grid img {
-        max-width: 45%;
-      }
     }
 
-    /* Smaller Tablets */
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav {
-        justify-content: flex-start;
-        flex-direction: column;
-        width: 100%;
-      }
-
-      header nav a {
-        margin: 5px 0;
-      }
-
-      .hero h1 {
-        font-size: 42px;
-      }
-
-      .hero p:first-of-type {
-        font-size: 18px;
-      }
-
-      .hero p:nth-of-type(2) {
-        font-size: 16px;
-        padding: 0 10px;
-      }
-
-      .btn-primary {
-        padding: 12px 25px;
-        font-size: 14px;
-      }
-    }
-
-    /* Mobile1 */
     @media (max-width: 320px) {
-      nav {
-        flex-direction: column;
-        gap: 8px;
-      }
-
       .about-section h1 {
         font-size: 30px;
-      }
-
-      .about-section p {
-        font-size: 15px;
-      }
-
-      .image-grid img {
-        max-width: 100%;
-      }
-    }
-    
-    /*Mobile2 */
-    @media (max-width: 360px) {
-      .hero h1 {
-        font-size: 36px;
-      }
-
-      .btn-primary {
-        width: 100%;
-        max-width: 280px;
-      }
-    }
-    
-    /*Mobile3 */
-    @media (max-width: 414px) {
-      .hero h1 {
-        font-size: 36px;
-      }
-
-      .btn-primary {
-        width: 100%;
-        max-width: 280px;
-      }
-    }
-    
-    /*Mobile4 */
-    @media (max-width: 480px) {
-      .hero h1 {
-        font-size: 36px;
-      }
-
-      .btn-primary {
-        width: 100%;
-        max-width: 280px;
-      }
-    }
-    
-    /*Mobile6 */
-    @media (max-width: 640px) {
-      .hero h1 {
-        font-size: 36px;
-      }
-
-      .btn-primary {
-        width: 100%;
-        max-width: 280px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-<img src="logo.png" alt="LibFest Logo">
-<nav>
-<a href="Libfest Home.html">Home</a>
-<a href="LIBFEST about.html">About</a>
-<a href="LLBFEST Events.html"class="active">Events</a>
-<a href="LIBFEST Sponsership.html">Sponsorship</a>
-<a href="LIBFEST Teams.html">Teams</a>
-<a href="LIBFEST Performer.html">Performers</a>
-<a href="LIBFEST Merch.html">Buy Merch</a>
-<a href="LIBFEST Ticket.html">Buy Tickets</a>
-<a href=" LIBFEST promote.html">Promote</a>
-<a href="LIBFEST contact.html">Contact</a>
-</nav>
-</header>
-  <!-- Events Section -->
-  <section class="about-section">
-    <h1>Events</h1>
-    <div class="events-grid">
-      <div class="event-card" style="background-image: url('welcomeparty.jpg');">
-        <h3>Welcome Party</h3>
-        <p>(blah bla blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah)</p>
-      </div>
-      <div class="event-card" style="background-image: url('BasketballGames.jpg');">
-        <h3>Exhibition Basketball Games</h3>
-        <p>(blah bla blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah)</p>
-      </div>
-      <div class="event-card" style="background-image: url('touristexcursions.jpg');">
-        <h3>Tourist Excursions</h3>
-        <p>(blah bla blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah)</p>
-      </div>
-      <div class="event-card" style="background-image: url('Musicfestival.jpg');">
-        <h3>Music Festival</h3>
-        <p>(blah bla blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah)</p>
-      </div>
-      <div class="event-card" style="background-image: url('BeachParty.jpg');">
-        <h3>Beach Party</h3>
-        <p>(blah bla blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah)</p>
-      </div>
-      <div class="event-card" style="background-image: url('workshop.jpg');">
-        <h3>Workshop on Investing in Liberia</h3>
-        <p>(blah bla blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah)</p>
-      </div>
-    </div>
-  </section>
+<!-- Top red bar with social media icons -->
+<div class="top-bar">
+  <div class="social-icons">
+    <a href="https://www.facebook.com/share/16GNFqZ5W4/" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" />
+    </a>
+    <a href="https://www.instagram.com/your-profile" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+    </a>
+  </div>
+</div>
 
-  <!-- Footer -->
-  <footer>
-    &copy; Copyright Liberia Festival. All Rights Reserved
-  </footer>
+<header class="site-header">
+  <img src="logo.png" alt="LibFest Logo" class="logo">
+
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav id="mainNav" class="main-nav">
+    <a href="Libfest Home.html">Home</a>
+    <a href="LIBFEST about.html">About</a>
+    <a href="LLBFEST Events.html" class="active">Events</a>
+    <a href="LIBFEST Sponsership.html">Sponsorship</a>
+    <a href="LIBFEST Teams.html">Teams</a>
+    <a href="LIBFEST Performer.html">Performers</a>
+    <a href="LIBFEST Merch.html">Buy Merch</a>
+    <a href="LIBFEST Ticket.html">Buy Tickets</a>
+    <a href="LIBFEST promote.html">Promote</a>
+    <a href="LIBFEST contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- Events Section -->
+<section class="about-section">
+  <h1>Events</h1>
+  <div class="events-grid">
+    <div class="event-card" style="background-image: url('welcomeparty.jpg');">
+      <h3>Welcome Party</h3>
+      <p>(blah bla blah blah blah...)</p>
+    </div>
+    <div class="event-card" style="background-image: url('BasketballGames.jpg');">
+      <h3>Exhibition Basketball Games</h3>
+      <p>(blah bla blah blah blah...)</p>
+    </div>
+    <div class="event-card" style="background-image: url('touristexcursions.jpg');">
+      <h3>Tourist Excursions</h3>
+      <p>(blah bla blah blah blah...)</p>
+    </div>
+    <div class="event-card" style="background-image: url('Musicfestival.jpg');">
+      <h3>Music Festival</h3>
+      <p>(blah bla blah blah blah...)</p>
+    </div>
+    <div class="event-card" style="background-image: url('BeachParty.jpg');">
+      <h3>Beach Party</h3>
+      <p>(blah bla blah blah blah...)</p>
+    </div>
+    <div class="event-card" style="background-image: url('workshop.jpg');">
+      <h3>Workshop on Investing in Liberia</h3>
+      <p>(blah bla blah blah blah...)</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  &copy; Copyright Liberia Festival. All Rights Reserved
+</footer>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mainNav');
+    const hamburger = document.getElementById('hamburger');
+    menu.classList.toggle('show');
+    hamburger.classList.toggle('open');
+  }
+</script>
 
 </body>
 </html>
