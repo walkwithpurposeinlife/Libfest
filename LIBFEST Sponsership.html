@@ -19,8 +19,42 @@
       color: inherit;
     }
 
-    /* Header */
-    header {
+    .button {
+      background-color: #b53f1d;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #922f17;
+    }
+
+    /* ✅ Top red bar */
+    .top-bar {
+      background-color: #b53f1d;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 5px 20px;
+    }
+
+    .social-icons a {
+      margin-left: 10px;
+      display: inline-block;
+    }
+
+    .social-icons img {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+    }
+
+    /* ✅ Header/nav styling */
+    .site-header {
       background-color: #292475;
       color: white;
       padding: 20px 30px;
@@ -28,30 +62,88 @@
       align-items: center;
       justify-content: space-between;
       flex-wrap: wrap;
+      position: relative;
     }
 
-    header img {
+    .logo {
       height: 120px;
     }
 
-    nav {
+    .main-nav {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 10px;
     }
 
-    header nav a {
+    .main-nav a {
       color: white;
       margin: 10px;
+      text-decoration: none;
       font-family: 'Open Sans', sans-serif;
-      position: relative;
+      transition: border-bottom 0.3s ease;
     }
 
-    header nav a.active,
-    header nav a:hover {
+    .main-nav a.active,
+    .main-nav a:hover {
       border-bottom: 3px solid #b53f1d;
       padding-bottom: 5px;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 1001;
+    }
+
+    .hamburger span {
+      height: 4px;
+      background: white;
+      border-radius: 2px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: rotate(45deg) translateY(10px);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: rotate(-45deg) translateY(-10px);
+    }
+
+    @media (max-width: 768px) {
+      .main-nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: #292475;
+        padding: 10px 0;
+      }
+
+      .main-nav.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .main-nav a {
+        margin: 10px 0;
+        font-size: 18px;
+      }
     }
 
     /* Sponsorship Section */
@@ -92,13 +184,18 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      transition: transform 0.3s ease;
     }
 
-    .card.red { border-color: #b53f1d; }         /* Radio Announcement */
-    .card.green { border-color: #587a33; }       /* Online Sponsorship */
-    .card.blue { border-color: #535a9f; }         /* Silver Sponsorship */
-    .card.orange { border-color: #ffb400; }       /* Gold Sponsorship */
-    .card.turquoise { border-color: #5ce1e6; }    /* Platinum Sponsorship */
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card.red { border-color: #b53f1d; }
+    .card.green { border-color: #587a33; }
+    .card.blue { border-color: #535a9f; }
+    .card.orange { border-color: #ffb400; }
+    .card.turquoise { border-color: #5ce1e6; }
 
     .card h3 {
       font-family: 'DM Serif Display', serif;
@@ -137,75 +234,58 @@
       color: red;
     }
 
-    .card button {
-      background-color: #b53f1d;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      font-weight: bold;
-      border-radius: 20px;
-      cursor: pointer;
-    }
-
-    .card button:hover {
-      background-color: #922f17;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #322515;
-      color: white;
-      text-align: center;
-      padding: 10px 10px;
-      font-size: 14px;
-    }
-
     .footnote {
       font-size: 12px;
       margin-top: 20px;
       color: #ffd700;
       text-align: center;
       max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 20px auto 0 auto;
     }
 
-    @media (max-width: 768px) {
-      .sponsorship-section h1 {
-        font-size: 32px;
-      }
-
-      .sponsorship-section h2 {
-        font-size: 20px;
-      }
-
-      .card h3 {
-        font-size: 18px;
-      }
-
-      .card h2 {
-        font-size: 20px;
-      }
+    footer {
+      background-color: #292475;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
 
+  <!-- Top red bar with social media icons -->
+  <div class="top-bar">
+    <div class="social-icons">
+      <a href="https://www.facebook.com/share/16GNFqZ5W4/" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" />
+      </a>
+      <a href="https://www.instagram.com/your-profile" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+      </a>
+    </div>
+  </div>
+
   <!-- Header -->
-  </head>
-<body>
-  <header>
-    <img src="logo.png" alt="LibFest Logo">
-    <nav>
-      <a href="Libfest Home.html">Home</a>
+  <header class="site-header">
+    <img src="logo.png" alt="LibFest Logo" class="logo">
+
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id="mainNav" class="main-nav">
+      <a href="Libfest Home.html" class="active">Home</a>
       <a href="LIBFEST about.html">About</a>
       <a href="LLBFEST Events.html">Events</a>
-      <a href="LIBFEST Sponsership.html"class="active">Sponsorship</a>
+      <a href="LIBFEST Sponsership.html">Sponsorship</a>
       <a href="LIBFEST Teams.html">Teams</a>
       <a href="LIBFEST Performer.html">Performers</a>
       <a href="LIBFEST Merch.html">Buy Merch</a>
       <a href="LIBFEST Ticket.html">Buy Tickets</a>
-      <a href=" LIBFEST promote.html">Promote</a>
+      <a href="LIBFEST promote.html">Promote</a>
       <a href="LIBFEST contact.html">Contact</a>
     </nav>
   </header>
@@ -216,93 +296,84 @@
     <h1>Sponsor Advertising Packages</h1>
 
     <div class="cards">
-
-      <!-- Radio Announcement Sponsorship -->
       <div class="card red">
-        <h3>Radio Announcement Sponsorship</h3>
-        <h2>$100 USD</h2>
+        <h3>Platinum Sponsor</h3>
+        <h2>$10,000</h2>
         <ul>
-          <li>Radio Sponsorship Announcement</li>
-          <li class="unavailable">Facebook/Instagram/Website Ad Display</li>
-          <li class="unavailable">Logo on Flyer</li>
-          <li class="unavailable">Banner ad display at all events</li>
-          <li class="unavailable">Sponsorship announcement to audience</li>
-          <li class="unavailable">Company Name on Trophy</li>
+          <li>Logo on Main Flyer***</li>
+          <li>Social Media Promo**</li>
+          <li>Ad on Tournament Website*</li>
+          <li>Logo on All Game Jerseys</li>
+          <li>Ad on Courtside Banner</li>
         </ul>
-        <button>Get Started</button>
       </div>
 
-      <!-- Online Sponsorship -->
       <div class="card green">
-        <h3>Online Sponsorship</h3>
-        <h2>$200 USD</h2>
+        <h3>Gold Sponsor</h3>
+        <h2>$5,000</h2>
         <ul>
-          <li class="unavailable">Radio Sponsorship Announcement</li>
-          <li>Facebook/Instagram/Website Ad Display</li>
-          <li class="unavailable">Logo on Flyer</li>
-          <li class="unavailable">Banner ad display at all events</li>
-          <li class="unavailable">Sponsorship announcement to audience</li>
-          <li class="unavailable">Company Name on Trophy</li>
+          <li>Logo on Main Flyer***</li>
+          <li>Social Media Promo**</li>
+          <li>Ad on Tournament Website*</li>
+          <li>Ad on Courtside Banner</li>
+          <li class="unavailable">Logo on All Game Jerseys</li>
         </ul>
-        <button>Get Started</button>
       </div>
 
-      <!-- Silver Sponsorship -->
       <div class="card blue">
-        <h3>Silver Sponsorship</h3>
-        <h2>$1000 USD</h2>
+        <h3>Silver Sponsor</h3>
+        <h2>$2,500</h2>
         <ul>
-          <li>Radio Sponsorship Announcement</li>
-          <li>Facebook/Instagram/Website Ad Display</li>
-          <li>Logo on Flyer</li>
-          <li class="unavailable">Banner ad display at all events</li>
-          <li class="unavailable">Sponsorship announcement to audience</li>
-          <li class="unavailable">Company Name on Trophy</li>
+          <li>Logo on Main Flyer***</li>
+          <li>Social Media Promo**</li>
+          <li>Ad on Tournament Website*</li>
+          <li class="unavailable">Ad on Courtside Banner</li>
+          <li class="unavailable">Logo on All Game Jerseys</li>
         </ul>
-        <button>Get Started</button>
       </div>
 
-      <!-- Gold Sponsorship -->
       <div class="card orange">
-        <h3>Gold Sponsorship</h3>
-        <h2>$2500 USD</h2>
+        <h3>Bronze Sponsor</h3>
+        <h2>$1,000</h2>
         <ul>
-          <li>Radio Sponsorship Announcement</li>
-          <li>Facebook/Instagram/Website Ad Display*</li>
-          <li>Logo on Flyer***</li>
-          <li>Banner ad display at all events*</li>
-          <li class="unavailable">Sponsorship announcement to audience</li>
-          <li class="unavailable">Company Name on Trophy</li>
+          <li>Logo on Main Flyer***</li>
+          <li>Social Media Promo**</li>
+          <li class="unavailable">Ad on Tournament Website*</li>
+          <li class="unavailable">Ad on Courtside Banner</li>
+          <li class="unavailable">Logo on All Game Jerseys</li>
         </ul>
-        <button>Get Started</button>
       </div>
 
-      <!-- Platinum Sponsorship -->
       <div class="card turquoise">
-        <h3>Platinum Sponsorship</h3>
-        <h2>$5000 USD</h2>
+        <h3>Supporter</h3>
+        <h2>$500</h2>
         <ul>
-          <li>Radio Sponsorship Announcement</li>
-          <li>Facebook/Instagram/Website Ad Display</li>
-          <li>Logo on Flyer</li>
-          <li>Banner ad display at tournament</li>
-          <li>Sponsorship announcement to audience</li>
-          <li>Company Name on Trophy</li>
+          <li>Social Media Promo**</li>
+          <li class="unavailable">Logo on Main Flyer***</li>
+          <li class="unavailable">Ad on Website*</li>
+          <li class="unavailable">Ad on Banner</li>
+          <li class="unavailable">Logo on Jerseys</li>
         </ul>
-        <button>Get Started</button>
       </div>
-
     </div>
 
     <div class="footnote">
-      *sponsor must provide banner ad (limit in size) | **sponsor must provide social media ad graphic | ***sponsor must provide logo for flyer
+      * Sponsor must provide ad graphic | ** Sponsor must provide social media creative | *** Sponsor must provide logo for flyer
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     &copy; Copyright Liberia Festival. All Rights Reserved
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mainNav');
+      const hamburger = document.getElementById('hamburger');
+      menu.classList.toggle('show');
+      hamburger.classList.toggle('open');
+    }
+  </script>
 
 </body>
 </html>
