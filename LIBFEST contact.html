@@ -21,6 +21,7 @@
       min-height: 100vh;
     }
 
+    /* Top red bar */
     .top-bar {
       background-color: #b53f1d;
       display: flex;
@@ -40,6 +41,7 @@
       vertical-align: middle;
     }
 
+    /* Header */
     .site-header {
       background-color: #292475;
       color: white;
@@ -99,11 +101,9 @@
     .hamburger.open span:nth-child(1) {
       transform: rotate(45deg) translateY(10px);
     }
-
     .hamburger.open span:nth-child(2) {
       opacity: 0;
     }
-
     .hamburger.open span:nth-child(3) {
       transform: rotate(-45deg) translateY(-10px);
     }
@@ -223,106 +223,109 @@
       font-size: 14px;
       margin-top: auto;
     }
+
+    /* Responsive Tweaks */
+    @media (max-width: 480px) {
+      .form-row {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 <body>
 
-<!-- Top red bar with social media icons -->
-<div class="top-bar">
-  <div class="social-icons">
-    <a href="https://www.facebook.com/share/16GNFqZ5W4/" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" />
-    </a>
-    <a href="https://www.instagram.com/your-profile" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
-    </a>
-  </div>
-</div>
-
-<!-- Site Header -->
-<header class="site-header">
-  <img src="logo.png" alt="LibFest Logo" class="logo">
-
-  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-
-  <nav id="mainNav" class="main-nav">
-    <a href="Libfest Home.html">Home</a>
-    <a href="LIBFEST about.html">About</a>
-    <a href="LLBFEST Events.html">Events</a>
-    <a href="LIBFEST Sponsership.html">Sponsorship</a>
-    <a href="LIBFEST Teams.html">Teams</a>
-    <a href="LIBFEST Performer.html">Performers</a>
-    <a href="LIBFEST Merch.html">Buy Merch</a>
-    <a href="LIBFEST Ticket.html">Buy Tickets</a>
-    <a href="LIBFEST promote.html">Promote</a>
-    <a href="LIBFEST contact.html" class="active">Contact</a>
-  </nav>
-</header>
-
-<!-- Page Title -->
-<h1>Contact LibFest</h1>
-
-<!-- Form Section -->
-<div class="form-container">
-  <form>
-    <div class="form-row">
-      <input type="text" placeholder="First Name*" required>
-      <input type="text" placeholder="Last Name*" required>
+  <!-- Top red bar with social media -->
+  <div class="top-bar">
+    <div class="social-icons">
+      <a href="https://www.facebook.com/share/16GNFqZ5W4/" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" />
+      </a>
+      <a href="https://www.instagram.com/your-profile" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+      </a>
     </div>
-    <div class="form-row">
-      <input type="tel" placeholder="Phone">
-      <input type="email" placeholder="Email*" required>
-    </div>
-    <textarea placeholder="Please tell us what you’d like to know or discuss about LibFest?"></textarea>
-    <button type="submit" class="submit-button">Submit</button>
-  </form>
-</div>
-
-<!-- Contact Info -->
-<div class="contact-info">
-  <p><strong>Other ways to contact LibFest…</strong></p>
-  <p><a href="mailto:info@libfest.org">info@libfest.org</a> &nbsp; | &nbsp; 555.555.5555</p>
-  <p><strong>Social Media</strong></p>
-  <div class="social-icons">
-    <a href="https://www.facebook.com/share/16GNFqZ5W4/" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" />
-    </a>
-    <a href="https://www.instagram.com/your-profile" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
-    </a>
   </div>
-</div>
 
-<!-- Footer Links -->
-<div class="footer-links">
-  <p><strong>More details coming soon about:</strong></p>
-  <a href="#">Events</a> |
-  <a href="#">Venues</a> |
-  <a href="#">Artists</a> |
-  <a href="#">Ticket Sales</a> |
-  <a href="#">Traveling to Liberia</a> |
-  <a href="#">Sponsorship</a> |
-  <a href="#">Volunteer opportunities</a>
-</div>
+  <!-- Header with hamburger -->
+  <header class="site-header">
+    <img src="logo.png" alt="LibFest Logo" class="logo">
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav id="mainNav" class="main-nav">
+      <a href="Libfest Home.html">Home</a>
+      <a href="LIBFEST about.html">About</a>
+      <a href="LLBFEST Events.html">Events</a>
+      <a href="LIBFEST Sponsership.html">Sponsorship</a>
+      <a href="LIBFEST Teams.html">Teams</a>
+      <a href="LIBFEST Performer.html">Performers</a>
+      <a href="LIBFEST Merch.html">Buy Merch</a>
+      <a href="LIBFEST Ticket.html">Buy Tickets</a>
+      <a href="LIBFEST promote.html">Promote</a>
+      <a href="LIBFEST contact.html" class="active">Contact</a>
+    </nav>
+  </header>
 
-<!-- Footer -->
-<footer>
-  &copy; Copyright Liberia Festival. All Rights Reserved
-</footer>
+  <!-- Page Title -->
+  <h1>Contact LibFest</h1>
 
-<!-- JS: Toggle for hamburger -->
-<script>
-  function toggleMenu() {
-    const nav = document.getElementById('mainNav');
-    const burger = document.getElementById('hamburger');
-    nav.classList.toggle('show');
-    burger.classList.toggle('open');
-  }
-</script>
+  <!-- Contact Form -->
+  <div class="form-container">
+    <form>
+      <div class="form-row">
+        <input type="text" placeholder="First Name*" required>
+        <input type="text" placeholder="Last Name*" required>
+      </div>
+      <div class="form-row">
+        <input type="tel" placeholder="Phone">
+        <input type="email" placeholder="Email*" required>
+      </div>
+      <textarea placeholder="Please tell us what you’d like to know or discuss about LibFest?"></textarea>
+      <button type="submit" class="submit-button">Submit</button>
+    </form>
+  </div>
 
+  <!-- Updated Contact Info with matching social icons -->
+  <div class="contact-info">
+    <p><strong>Other ways to contact LibFest…</strong></p>
+    <p><a href="mailto:info@libfest.org">info@libfest.org</a> &nbsp; | &nbsp; 555.555.5555</p>
+    <p><strong>Social Media</strong></p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/share/16GNFqZ5W4/" target="_blank" aria-label="Facebook">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" />
+      </a>
+      <a href="https://www.instagram.com/your-profile" target="_blank" aria-label="Instagram">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer Links -->
+  <div class="footer-links">
+    <p><strong>More details coming soon about:</strong></p>
+    <a href="#">Events</a> |
+    <a href="#">Venues</a> |
+    <a href="#">Artists</a> |
+    <a href="#">Ticket Sales</a> |
+    <a href="#">Traveling to Liberia</a> |
+    <a href="#">Sponsorship</a> |
+    <a href="#">Volunteer opportunities</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; Copyright Liberia Festival. All Rights Reserved
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('mainNav');
+      const burger = document.getElementById('hamburger');
+      nav.classList.toggle('show');
+      burger.classList.toggle('open');
+    }
+  </script>
 </body>
 </html>
