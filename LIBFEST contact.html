@@ -21,36 +21,115 @@
       min-height: 100vh;
     }
 
-    header {
+    .top-bar {
+      background-color: #b53f1d;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: 5px 20px;
+    }
+
+    .social-icons a {
+      margin-left: 10px;
+      display: inline-block;
+    }
+
+    .social-icons img {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+    }
+
+    .site-header {
       background-color: #292475;
       color: white;
       padding: 20px 30px;
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
+      position: relative;
     }
 
-    header img {
+    .logo {
       height: 120px;
     }
 
-    nav {
+    .main-nav {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 10px;
     }
 
-    nav a {
+    .main-nav a {
       color: white;
       margin: 10px;
       text-decoration: none;
+      font-family: 'Open Sans', sans-serif;
+      transition: border-bottom 0.3s ease;
     }
 
-    nav a.active,
-    nav a:hover {
+    .main-nav a.active,
+    .main-nav a:hover {
       border-bottom: 3px solid #b53f1d;
       padding-bottom: 5px;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 1001;
+    }
+
+    .hamburger span {
+      height: 4px;
+      background: white;
+      border-radius: 2px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: rotate(45deg) translateY(10px);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: rotate(-45deg) translateY(-10px);
+    }
+
+    @media (max-width: 768px) {
+      .main-nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: #292475;
+        padding: 10px 0;
+      }
+
+      .main-nav.show {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .main-nav a {
+        margin: 10px 0;
+        font-size: 18px;
+      }
     }
 
     h1 {
@@ -123,11 +202,6 @@
       text-decoration: underline;
     }
 
-    .social-icons {
-      font-size: 24px;
-      margin: 10px 0;
-    }
-
     .footer-links {
       font-size: 15px;
       text-align: center;
@@ -149,200 +223,106 @@
       font-size: 14px;
       margin-top: auto;
     }
-
-/* ==========================
-       Responsive Styles
-   ========================== */
-
-/* Tablets */
-@media (max-width: 991px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .merch-section h1 {
-    font-size: 36px;
-  }
-
-  .text {
-    font-size: 16px;
-  }
-
-  .image-box img {
-    max-width: 45%;
-  }
-}
-
-/* Smaller Tablets */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav {
-    justify-content: flex-start;
-    flex-direction: column;
-    width: 100%;
-  }
-
-  header nav a {
-    margin: 5px 0;
-  }
-
-  .hero h1 {
-    font-size: 42px;
-  }
-
-  .hero p:first-of-type {
-    font-size: 18px;
-  }
-
-  .hero p:nth-of-type(2) {
-    font-size: 16px;
-    padding: 0 10px;
-  }
-
-  .btn-primary {
-    padding: 12px 25px;
-    font-size: 14px;
-  }
-
-  .merch-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .text {
-    text-align: center;
-  }
-}
-
-/* Mobile 6 */
-@media (max-width: 640px) {
-  .hero h1 {
-    font-size: 36px;
-  }
-
-  .btn-primary {
-    width: 100%;
-    max-width: 280px;
-  }
-}
-
-/* Mobile 4 */
-@media (max-width: 480px) {
-  .btn-primary {
-    width: 100%;
-    max-width: 280px;
-  }
-}
-
-/* Mobile 3 */
-@media (max-width: 414px) {
-  .btn-primary {
-    width: 100%;
-    max-width: 280px;
-  }
-}
-
-/* Mobile 2 */
-@media (max-width: 360px) {
-  .btn-primary {
-    width: 100%;
-    max-width: 280px;
-  }
-}
-
-/* Mobile 1 */
-@media (max-width: 320px) {
-  nav {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .merch-section h1 {
-    font-size: 30px;
-  }
-
-  .text {
-    font-size: 15px;
-  }
-
-  .image-box img {
-    max-width: 100%;
-  }
-}
   </style>
 </head>
 <body>
 
-  <!-- Header -->
- <header>
-<img src="logo.png" alt="LibFest Logo">
-<nav>
-<a href="Libfest Home.html" >Home</a>
-<a href="LIBFEST about.html">About</a>
-<a href="LLBFEST Events.html">Events</a>
-<a href="LIBFEST Sponsership.html">Sponsorship</a>
-<a href="LIBFEST Teams.html">Teams</a>
-<a href="LIBFEST Performer.html">Performers</a>
-<a href="LIBFEST Merch.html">Buy Merch</a>
-<a href="LIBFEST Ticket.html">Buy Tickets</a>
-<a href=" LIBFEST promote.html">Promote</a>
-<a href="LIBFEST contact.html" class="active">Contact</a>
-</nav>
+<!-- Top red bar with social media icons -->
+<div class="top-bar">
+  <div class="social-icons">
+    <a href="https://www.facebook.com/share/16GNFqZ5W4/" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" />
+    </a>
+    <a href="https://www.instagram.com/your-profile" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+    </a>
+  </div>
+</div>
+
+<!-- Site Header -->
+<header class="site-header">
+  <img src="logo.png" alt="LibFest Logo" class="logo">
+
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav id="mainNav" class="main-nav">
+    <a href="Libfest Home.html">Home</a>
+    <a href="LIBFEST about.html">About</a>
+    <a href="LLBFEST Events.html">Events</a>
+    <a href="LIBFEST Sponsership.html">Sponsorship</a>
+    <a href="LIBFEST Teams.html">Teams</a>
+    <a href="LIBFEST Performer.html">Performers</a>
+    <a href="LIBFEST Merch.html">Buy Merch</a>
+    <a href="LIBFEST Ticket.html">Buy Tickets</a>
+    <a href="LIBFEST promote.html">Promote</a>
+    <a href="LIBFEST contact.html" class="active">Contact</a>
+  </nav>
 </header>
 
-  <!-- Page Title -->
-  <h1>Contact LibFest</h1>
+<!-- Page Title -->
+<h1>Contact LibFest</h1>
 
-  <!-- Form Section -->
-  <div class="form-container">
-    <form>
-      <div class="form-row">
-        <input type="text" placeholder="First Name*" required>
-        <input type="text" placeholder="Last Name*" required>
-      </div>
-      <div class="form-row">
-        <input type="tel" placeholder="Phone">
-        <input type="email" placeholder="Email*" required>
-      </div>
-      <textarea placeholder="Please tell us what you’d like to know or discuss about LibFest?"></textarea>
-      <button type="submit" class="submit-button">Submit</button>
-    </form>
-  </div>
-
-  <!-- Contact Info -->
-  <div class="contact-info">
-    <p><strong>Other ways to contact LibFest…</strong></p>
-    <p><a href="mailto:info@libfest.org">info@libfest.org</a> &nbsp; | &nbsp; 555.555.5555</p>
-    <p><strong>Social Media</strong></p>
-    <div class="social-icons">
-      <a href="#"><span>📘</span></a>
-      <a href="#"><span>📸</span></a>
+<!-- Form Section -->
+<div class="form-container">
+  <form>
+    <div class="form-row">
+      <input type="text" placeholder="First Name*" required>
+      <input type="text" placeholder="Last Name*" required>
     </div>
-  </div>
+    <div class="form-row">
+      <input type="tel" placeholder="Phone">
+      <input type="email" placeholder="Email*" required>
+    </div>
+    <textarea placeholder="Please tell us what you’d like to know or discuss about LibFest?"></textarea>
+    <button type="submit" class="submit-button">Submit</button>
+  </form>
+</div>
 
-  <!-- Footer Links -->
-  <div class="footer-links">
-    <p><strong>More details coming soon about:</strong></p>
-    <a href="#">Events</a> |
-    <a href="#">Venues</a> |
-    <a href="#">Artists</a> |
-    <a href="#">Ticket Sales</a> |
-    <a href="#">Traveling to Liberia</a> |
-    <a href="#">Sponsorship</a> |
-    <a href="#">Volunteer opportunities</a>
+<!-- Contact Info -->
+<div class="contact-info">
+  <p><strong>Other ways to contact LibFest…</strong></p>
+  <p><a href="mailto:info@libfest.org">info@libfest.org</a> &nbsp; | &nbsp; 555.555.5555</p>
+  <p><strong>Social Media</strong></p>
+  <div class="social-icons">
+    <a href="https://www.facebook.com/share/16GNFqZ5W4/" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" />
+    </a>
+    <a href="https://www.instagram.com/your-profile" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+    </a>
   </div>
+</div>
 
-  <!-- Footer -->
-  <footer>
-    &copy; Copyright Liberia Festival. All Rights Reserved
-  </footer>
+<!-- Footer Links -->
+<div class="footer-links">
+  <p><strong>More details coming soon about:</strong></p>
+  <a href="#">Events</a> |
+  <a href="#">Venues</a> |
+  <a href="#">Artists</a> |
+  <a href="#">Ticket Sales</a> |
+  <a href="#">Traveling to Liberia</a> |
+  <a href="#">Sponsorship</a> |
+  <a href="#">Volunteer opportunities</a>
+</div>
+
+<!-- Footer -->
+<footer>
+  &copy; Copyright Liberia Festival. All Rights Reserved
+</footer>
+
+<!-- JS: Toggle for hamburger -->
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('mainNav');
+    const burger = document.getElementById('hamburger');
+    nav.classList.toggle('show');
+    burger.classList.toggle('open');
+  }
+</script>
 
 </body>
 </html>
