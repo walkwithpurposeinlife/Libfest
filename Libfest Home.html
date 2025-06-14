@@ -6,6 +6,8 @@
   <title>LibFest 2025</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-b7N6l4b7YhFk2lo8G4D+smr8lK3Huv0S6GzByxN3TwRC9rgMQP7WS+eEt4SczebKNR+v9O8qPk+PO5+GeIYxIA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <style>
     :root {
       --blue: #292475;
@@ -25,6 +27,26 @@
       background-color: var(--light);
       color: var(--brown);
       line-height: 1.6;
+    }
+
+    .top-bar {
+      background-color: var(--red);
+      padding: 5px 20px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .social-icons a {
+      color: white;
+      margin-left: 15px;
+      font-size: 18px;
+      text-decoration: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      opacity: 0.8;
     }
 
     header {
@@ -124,6 +146,10 @@
         margin: 10px 0;
         font-size: 18px;
       }
+
+      .top-bar {
+        justify-content: center;
+      }
     }
 
     .hero {
@@ -192,6 +218,19 @@
   </style>
 </head>
 <body>
+
+  <!-- Top bar with social icons on right -->
+  <div class="top-bar">
+    <div class="social-icons">
+      <a href="https://www.facebook.com/share/16GNFqZ5W4/" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="#" target="_blank" aria-label="Instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </div>
+
   <header>
     <img src="logo.png" alt="LibFest Logo">
 
