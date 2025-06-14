@@ -6,8 +6,6 @@
   <title>LibFest 2025</title>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-b7N6l4b7YhFk2lo8G4D+smr8lK3Huv0S6GzByxN3TwRC9rgMQP7WS+eEt4SczebKNR+v9O8qPk+PO5+GeIYxIA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
   <style>
     :root {
       --blue: #292475;
@@ -31,22 +29,22 @@
 
     .top-bar {
       background-color: var(--red);
-      padding: 5px 20px;
+      color: white;
       display: flex;
       justify-content: flex-end;
       align-items: center;
+      padding: 5px 20px;
     }
 
     .social-icons a {
-      color: white;
-      margin-left: 15px;
-      font-size: 18px;
-      text-decoration: none;
-      transition: opacity 0.3s ease;
+      margin-left: 10px;
+      display: inline-block;
     }
 
-    .social-icons a:hover {
-      opacity: 0.8;
+    .social-icons img {
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
     }
 
     header {
@@ -146,10 +144,6 @@
         margin: 10px 0;
         font-size: 18px;
       }
-
-      .top-bar {
-        justify-content: center;
-      }
     }
 
     .hero {
@@ -219,14 +213,14 @@
 </head>
 <body>
 
-  <!-- Top bar with social icons on right -->
+  <!-- Top red bar with social icons -->
   <div class="top-bar">
     <div class="social-icons">
-      <a href="https://www.facebook.com/share/16GNFqZ5W4/" target="_blank" aria-label="Facebook">
-        <i class="fab fa-facebook-f"></i>
+      <a href="https://www.facebook.com/share/16GNFqZ5W4/" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" />
       </a>
-      <a href="#" target="_blank" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
+      <a href="#" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
       </a>
     </div>
   </div>
@@ -234,7 +228,6 @@
   <header>
     <img src="logo.png" alt="LibFest Logo">
 
-    <!-- Hamburger button for mobile -->
     <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
       <span></span>
       <span></span>
@@ -250,7 +243,7 @@
       <a href="LIBFEST Performer.html">Performers</a>
       <a href="LIBFEST Merch.html">Buy Merch</a>
       <a href="LIBFEST Ticket.html">Buy Tickets</a>
-      <a href=" LIBFEST promote.html">Promote</a>
+      <a href="LIBFEST promote.html">Promote</a>
       <a href="LIBFEST contact.html">Contact</a>
     </nav>
   </header>
