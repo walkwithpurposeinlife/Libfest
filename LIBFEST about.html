@@ -21,39 +21,113 @@
     }
 
     /* Header */
-    header {
-      background-color: #292475;
-      color: white;
-      padding: 20px 30px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
+   .top-bar {
+  background-color: #b53f1d;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 5px 20px;
+}
 
-    header img {
-      height: 120px;
-    }
+.social-icons a {
+  margin-left: 10px;
+  display: inline-block;
+}
 
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-    }
+.social-icons img {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
 
-    header nav a {
-      color: white;
-      margin:10px;
-      font-family: 'Open Sans', sans-serif;
-      position: relative;
-    }
+.site-header {
+  background-color: #292475;
+  color: white;
+  padding: 20px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
 
-    header nav a.active,
-    header nav a:hover {
-      border-bottom: 3px solid #b53f1d;
-      padding-bottom: 5px;
-    }
+.logo {
+  height: 120px;
+}
+
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.main-nav a {
+  color: white;
+  margin: 10px;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+  transition: border-bottom 0.3s ease;
+}
+
+.main-nav a.active,
+.main-nav a:hover {
+  border-bottom: 3px solid #b53f1d;
+  padding-bottom: 5px;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.hamburger span {
+  height: 4px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(10px);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-10px);
+}
+
+@media (max-width: 768px) {
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #292475;
+    padding: 10px 0;
+  }
+
+  .main-nav.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .main-nav a {
+    margin: 10px 0;
+    font-size: 18px;
+  }
 
     /* Hero Content */
     .about-section {
@@ -220,21 +294,41 @@
   <!-- Header -->
   </head>
 <body>
-  <header>
-    <img src="logo.png" alt="LibFest Logo">
-    <nav>
-      <a href="Libfest Home.html">Home</a>
-      <a href="LIBFEST about.html"class="active">About</a>
-      <a href="LLBFEST Events.html">Events</a>
-      <a href="LIBFEST Sponsership.html">Sponsorship</a>
-      <a href="LIBFEST Teams.html">Teams</a>
-      <a href="LIBFEST Performer.html">Performers</a>
-      <a href="LIBFEST Merch.html">Buy Merch</a>
-      <a href="LIBFEST Ticket.html">Buy Tickets</a>
-      <a href=" LIBFEST promote.html">Promote</a>
-      <a href="LIBFEST contact.html">Contact</a>
-    </nav>
-  </header>
+ <!-- Top red bar with social media icons -->
+<div class="top-bar">
+  <div class="social-icons">
+    <a href="https://www.facebook.com/share/16GNFqZ5W4/" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" />
+    </a>
+    <a href="https://www.instagram.com/your-profile" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" />
+    </a>
+  </div>
+</div>
+
+<header class="site-header">
+  <img src="logo.png" alt="LibFest Logo" class="logo">
+
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav id="mainNav" class="main-nav">
+    <a href="Libfest Home.html" class="active">Home</a>
+    <a href="LIBFEST about.html">About</a>
+    <a href="LLBFEST Events.html">Events</a>
+    <a href="LIBFEST Sponsership.html">Sponsorship</a>
+    <a href="LIBFEST Teams.html">Teams</a>
+    <a href="LIBFEST Performer.html">Performers</a>
+    <a href="LIBFEST Merch.html">Buy Merch</a>
+    <a href="LIBFEST Ticket.html">Buy Tickets</a>
+    <a href="LIBFEST promote.html">Promote</a>
+    <a href="LIBFEST contact.html">Contact</a>
+  </nav>
+</header>
+
 
   <!-- About Section -->
   <section class="about-section">
